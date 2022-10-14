@@ -15,7 +15,7 @@
     <input type="text" id="r" name="r"required>
     <label for="n">Количество платежей:</label>
     <input type="text" id="n" name="n"required>
-    <label for="m">Количество платежей:</label>
+    <label for="m">Дни:</label>
     <input type="text" id="m" name="m"required>
     <input type="submit">
 
@@ -29,12 +29,10 @@
             $n = $_POST["n"];
             $m = $_POST["m"];
             $c=new \Alina\Sachkovska\calc($s, $r, $n, $m);
-            $c->Simple();
-            $c->SimpleInDays();
-            $c->Difficult();
-            $c->DifficultInDays();
             echo "<p>Простые проценты - ".$c->Simple()."</p>";
             echo "<p>Сложные проценты - ".$c->Difficult()."</p>";
+            echo "<p>Простые проценты по дням - ".$c->SimpleInDays()."</p>";
+            echo "<p>Сложные проценты по дням - ".$c->DifficultInDays()."</p>";
         }
     ?>   
 </body>
